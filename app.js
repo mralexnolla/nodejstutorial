@@ -1,20 +1,13 @@
-//Global Variable
+const path = require('path');
 
-// __dirname
-// __filename
-// require
-// module
-// process
+//console.log(path.sep)
 
-//Modules are (Encapsulated Code) ie Will only share what we want (the minimum)
-const names = require("./4-names");
-const sayHi = require("./5-utils");
-const data = require("./6-alternative_flavore")
+const filrPath = path.join('/path1/','path2','text.txt')
+//console.log(filrPath);
 
-//console.log(sayHi);
-console.log(data)
-sayHi("Luke");
-sayHi(names.john);
-sayHi(names.peter);
 
-//console.log(require)
+const baseName = path.basename(filrPath);
+//console.log(baseName);
+
+const absolute = path.resolve(__dirname, 'path1', 'path2', 'text.txt')
+console.log(absolute)
