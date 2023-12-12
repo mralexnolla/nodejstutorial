@@ -1,19 +1,28 @@
-const http = require('http');
+//npm - global commands, come with node
+//npm --version
 
-const server = http.createServer((req, res) => {
-  // res.write("Hello welcome to my page")
-  // res.end()
-  if(req.url === "/" ){
-    res.end("<h1>home page</h1>");
-  }else if(req.url === "/about"){
-    res.end("<h1>About us</h1>");
-  }else{
-    res.end(`
-      <h1>I'm unavailable </h1>
-      <p>Them no de see me </p>
-      <a href="/">back to home</a>
-    `)
-  }
-})
+//npm local dependency - used it in your local environment
+// npm install / i <package>
 
-server.listen(3000)
+//npm - glabl dependency - use is in any project
+//npm install -g <package>
+
+//package.json - stores info about project/package
+// manual approach (create package.json in the root)
+// npm init (answer questions step by by)
+// npm init -y (picks the defaults setup)
+
+
+const _ = require('lodash');
+
+const item = [1, [2, [3, [4]]]]
+const newItem = _.flattenDeep(item)
+
+console.log(newItem);
+
+
+// git init
+// .git 
+// ls -a
+// git add . or git add *
+// git status
