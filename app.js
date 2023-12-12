@@ -1,13 +1,19 @@
-const path = require('path');
+const http = require('http');
 
-//console.log(path.sep)
+const server = http.createServer((req, res) => {
+  // res.write("Hello welcome to my page")
+  // res.end()
+  if(req.url === "/" ){
+    res.end("<h1>home page</h1>");
+  }else if(req.url === "/about"){
+    res.end("<h1>About us</h1>");
+  }else{
+    res.end(`
+      <h1>I'm unavailable </h1>
+      <p>Them no de see me </p>
+      <a href="/">back to home</a>
+    `)
+  }
+})
 
-const filrPath = path.join('/path1/','path2','text.txt')
-//console.log(filrPath);
-
-
-const baseName = path.basename(filrPath);
-//console.log(baseName);
-
-const absolute = path.resolve(__dirname, 'path1', 'path2', 'text.txt')
-console.log(absolute)
+server.listen(3000)
